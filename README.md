@@ -1,2 +1,18 @@
-# Product-Management-System-cruds-
-A simple JavaScript game where the player tries to guess a randomly generated number between 1 and 10.
+## ادارة منتجات بال Js - CRUDS Operations Pure JavaScript
+
+our site is live at 
+https://amr-salam-dev.github.io/-Js---CRUDS-Operations-Pure-JavaScript/
+## HTML:
+-
+-
+-
+
+
+
+## CSS :
+
+
+
+
+
+## JS :

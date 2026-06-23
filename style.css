@@ -1,0 +1,175 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #0f172a;
+    color: #e5e7eb;
+    font-family: system-ui ;
+
+}
+.crud{
+    width: 80%;
+    margin: auto;
+}
+.head{/* ===== Header ===== */
+    text-align: center;
+    text-transform: uppercase;
+    margin: 20px 0;
+    color: #38bdf8;
+}
+input{
+    width: 100%;
+    height: 36px;
+    border: none;
+    outline: none;
+    margin: 6px 0px;
+    border-radius: 6PX;
+    padding: 6px 10px;
+    background: #020617;
+    color: #e5e7eb;
+    transition: 0.3s;
+
+}
+input::placeholder{
+    color: #94a3b8;
+}
+input:focus{
+    background: #020617;
+    border: 1px solid #38bdf8;
+    transform: scale(1.03);
+}
+
+/* ===== Price inputs ===== */
+.price input{
+    width: 22%;
+}
+#total{
+    background: #7f1d1d;      /* dark red */
+    padding: 6px 10px;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight: bold;
+}
+#total::before{
+    content: 'Total: ';
+}
+button{
+    width: 100%;
+    height: 36px;
+    border: none;
+    cursor: pointer;
+    background: #38bdf8;      /* primary blue */
+    color: #020617;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover{
+    background: #0ea5e9;
+    letter-spacing: 1px;
+}
+
+/* ===== Search Buttons ===== */
+.btnSearch{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+.btnSearch button{
+    width: 48%;
+}
+
+/* ===== Table ===== */
+table{
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
+    border-collapse: collapse;
+}
+
+table th{
+    text-transform: uppercase;
+    color: #38bdf8;
+}
+
+th, td{
+    padding: 8px;
+    border-bottom: 1px solid #1e293b;
+}
+/* ===== Delete / Update buttons ===== */
+table button{
+    width: auto;
+    padding: 5px 10px;
+    border-radius: 8px;
+}
+
+table button:hover{
+    letter-spacing: normal;
+}
+
+/*   */
+/*   */
+tbody tr{
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+    filter: blur(4px);
+    animation: rowEnter 0.5s ease forwards;
+}
+
+@keyframes rowEnter{
+    to{
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+tbody tr.delete-effect{
+    animation: rowDelete 0.4s ease forwards;
+}
+
+@keyframes rowDelete{
+    0%{
+        opacity: 1;
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.05);
+        background: #7f1d1d;
+    }
+    100%{
+        opacity: 0;
+        transform: scale(0.8) translateX(50px);
+    }
+}
+table{
+    box-shadow: 0 0 20px rgba(56,189,248,0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+button{
+    position: relative;
+    overflow: hidden;
+}
+
+button::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: 0.5s;
+}
+
+button:hover::before{
+    left: 100%;
+}
+tbody tr:hover{
+    background: #1e293b;
+    transform: scale(1.02);
+    transition: 0.2s;
+}
